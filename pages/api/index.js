@@ -1,5 +1,5 @@
 // pages/api/index.js
-function proxy async (req, res) => {
+async function proxy (req, res) => {
   try {
     const bootstrapResponse = await fetch(
       'https://fantasy.premierleague.com/api/bootstrap-static/'
@@ -41,5 +41,4 @@ const allowCors = fn => async (req, res) => {
 }
 
 export default allowCors(proxy)
-
 
