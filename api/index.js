@@ -1,4 +1,8 @@
-const fetch = require('node-fetch');
+// api/index.js
+const fetch = import('node-fetch').then((mod) => mod.default);
+
+// ... Rest of the code remains the same ...
+
 
 // Serverless function handler
 module.exports = async (req, res) => {
@@ -30,6 +34,9 @@ module.exports = async (req, res) => {
       bootstrapData: bootstrapData,
       fixturesData: fixturesData,
     };
+
+     // Log responseData to the console to check if it's working
+     console.log('Response Data:', responseData);
 
     // Send the response
     res.status(200).json(responseData);
